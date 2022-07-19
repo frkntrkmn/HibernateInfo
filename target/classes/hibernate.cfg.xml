@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/HibernateInfoDB</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">asd123asd</property>
+
+        <!--
+             - create metodu ve update metodu vardor
+             - create metodu tabloyu tamamen siler yeniden create eder
+             - bilgileri herşeyi siler genelde test için yazılır
+
+
+        -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>
+
+        <!--
+            - map yapıcam bana sınıfı göster
+            - entitylerden map oluşturulur
+            - sen entity i map ettiysen oluşturulur yazmadıysan oluşturulmaz
+            - bütün nesnelerden tablo oluşturulmaz o yüzden yazılmaz
+            - sen git customer sınıfından tablo oluştur
+            - tablonun detayları entity nin içinde
+        -->
+
+        <mapping class="com.furkan.repository.entity.Customer"></mapping>
+        <mapping class="com.furkan.repository.entity.Sales"></mapping>
+
+
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,21 @@
+    1_ bağımlılıklar eklenmeli postgresql ve hibernate core için
+-<dependies> <dependies> bu ikisinin arasına mavenRepositoryden
+
+    2_hibernate yönetimi için config dosyası (.cfg.xml) eklenmeli.
+-muhammet hocanın github repositorysinden alıcan:
+-https://github.com/muhammedali55/HibernateUygulamalar-/blob/master/src/main/resources/hibernate.cfg.xml
+-bunu sil:  <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+    3_ hibernate i her yerde açıp kapatmamak için utility dosyasında yazılır
+- session ve exception lar için bir dosya yazdık utility nin içinde
+-oradan çağırığ kontrol edicez
+-session oturum yönetidir oturumu aç kapat gibi
+
+    4_ transaction a dikkat et
+örnek:
+banka ya gittin kartı soktun para çek dedin kartı verdi parayı tam verecek
+elektrik gitti mekanizma açılmadı karttan para düştü  kartı aldın
+ama mekanizma açılmadığı için alamadın.bunun olmaması için transaction var.
+her şeyi izliyor bir sorun mu oldu yaptığı her şeyi iptal et.
+senin kartına parayı da iade eder parayı da geri bankamatiğe yükler.
+bütün işlemleri iptal eder
